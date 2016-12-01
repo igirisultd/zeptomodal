@@ -1,7 +1,7 @@
 ;(function($) {
   $.extend($.fn, {
     modal: function(content) {
-      alert(content);
+      window.alert(content);
     }
   });
 })(Zepto || jQuery);
