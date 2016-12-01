@@ -1,0 +1,22 @@
+{
+  "name": "zepto-modal",
+  "main": "zeptomodal.js",
+  "homepage": "https://github.com/igirisultd/zeptomodal",
+  "authors": [
+    "Gary McLean Hall <gary@igirisu.co>"
+  ],
+  "description": "(Tiny) modal layer extension for zeptojs",
+  "keywords": [
+    "modal",
+    "zepto",
+    "zeptojs"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
