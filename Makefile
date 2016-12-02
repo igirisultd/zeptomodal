@@ -1,15 +1,20 @@
 
 bin-dir = ./node_modules/.bin/
+bower = $(bin-dir)bower
 karma = $(bin-dir)karma
 http-server = $(bin-dir)http-server
 
-.PHONY: tests-manual tests ci
+.PHONY: tests-manual tests ci deps
 
-tests-manual:
+deps:
+	npm install
+	$(bower) install
+
+tests-manual: deps
 	$(http-server)
 
-tests:
+tests: deps
 	$(karma) start
 
-ci:
+ci: deps
 	$(karma) start --browsers SlimerJS --single-run

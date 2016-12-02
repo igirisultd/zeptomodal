@@ -1,4 +1,1 @@
-before_script:
-  - npm install
-  - bower install
 script: make ci
