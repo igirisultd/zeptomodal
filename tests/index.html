@@ -20,7 +20,10 @@
     <script src="../node_modules/mocha/mocha.js"></script>
     <script src="../node_modules/blanket/dist/mocha/blanket_mocha.js"></script>
 
-    <script>mocha.setup('bdd');</script>
+    <script>
+      var should = chai.should();
+      mocha.setup('bdd');
+    </script>
 
     <!-- dependency on zepto -->
     <script src="../bower_components/zepto/zepto.js"></script>

@@ -5,13 +5,18 @@
     <title>ZeptoModal - A tiny modal for Zeptojs</title>
 
     <script src="bower_components/zepto/zepto.min.js"></script>
-    <script src="zeptomodal.js"></script>
+    <script src="src/zeptomodal.js"></script>
   </head>
   <body>
-    <div id="myZeptoModal">
-    </div>
+    <a id="zeptoModalTrigger" href="#" role="button">ZeptoModal</a>
     <script>
-      $('#myZeptoModal').modal('hello!');
+      $('#zeptoModalTrigger').on('click', function() {
+        $.modal({
+          title: 'This is my modal...',
+          content: '...this is my gun...<br />...this is for shooting...<br />...this is for fun...<br />',
+          footer: '...by Igirisu Ltd'
+        });
+      });
     </script>
   </body>
 </html>
