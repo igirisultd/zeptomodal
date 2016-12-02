@@ -3,8 +3,13 @@ bin-dir = ./node_modules/.bin/
 bower = $(bin-dir)bower
 karma = $(bin-dir)karma
 http-server = $(bin-dir)http-server
+uglify = $(bin-dir)uglifyjs
+source = ./src/zeptomodal.js
+out-dir = ./dist/
+minified = $(out-dir)zeptomodal.min.js
 
-.PHONY: tests-manual tests ci deps
+#We're all phonies around here
+.PHONY: tests-manual tests ci ci-tests deps build
 
 deps:
 	npm install
@@ -16,5 +21,11 @@ tests-manual: deps
 tests: deps
 	$(karma) start
 
-ci: deps
+ci-tests: deps
 	$(karma) start --browsers SlimerJS --single-run
+
+ci: ci-tests build
+
+build: deps
+	cp $(source) $(out-dir)
+	$(uglify) --compress --mangle --output $(minified) -- $(source)
