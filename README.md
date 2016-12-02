@@ -4,6 +4,8 @@ A tiny modal extension for Zepto which is MIT licensed to allow unrestricted com
 
 ##To Test
 
-1. `bower install zepto`
+1. `npm install`
 
-2. Open `test.html` in a browser.
+2. `bower install`
+
+3. `make tests` / `make ci`

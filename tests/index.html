@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+  </head>
+
+  <body>
+
+    <div id="mocha"></div>
+
+    <div id="test" style="position: fixed; top: 0; left: -99999px;">
+    </div>
+
+    <script src="../node_modules/chai/chai.js"></script>
+    <script src="../node_modules/chai-dom/chai-dom.js"></script>
+    <script src="../node_modules/sinon-chai/lib/sinon-chai.js"></script>
+    <script src="../node_modules/sinon/pkg/sinon.js"></script>
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/blanket/dist/mocha/blanket_mocha.js"></script>
+
+    <script>mocha.setup('bdd');</script>
+
+    <!-- dependency on zepto -->
+    <script src="../bower_components/zepto/zepto.js"></script>
+    <script src="../src/zeptomodal.js" data-cover></script>
+    <script src="zeptomodal-tests.js"></script>
+    <script>
+
+      if (window.PHANTOMJS) {
+        //  blanket.options("reporter", "../node_modules/grunt-blanket-mocha/support/grunt-reporter.js");
+      }
+      else {
+        mocha.run();
+      }
+
+    </script>
+
+  </body>
+
+</html>
